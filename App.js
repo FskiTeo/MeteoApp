@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Api from './component/api';
+import Informations from './component/information';
+
 export default function App() {
+  const api = new Api();
+  const data = api.get_seven_days_meteo();
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Informations data={data}/> 
       <StatusBar style="auto" />
     </View>
   );
